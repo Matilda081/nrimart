@@ -24,3 +24,56 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* NriMart Login and Registration Animations */
+
+@keyframes float-orb {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(25px, -30px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nrimart-orb {
+  animation: float-orb 8s ease-in-out infinite;
+}
+
+.nrimart-glow {
+  animation: glow-pulse 7s ease-in-out infinite;
+}
+
+.nrimart-fade {
+  animation: fade-up 1s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nrimart-orb,
+  .nrimart-glow,
+  .nrimart-fade {
+    animation: none;
+  }
+}
