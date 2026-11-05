@@ -192,7 +192,7 @@ export default function Home() {
             <img
               src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1000"
               alt="Fresh quality rice"
-              className="relative h-[350px] w-full rounded-[35px] object-cover shadow-2xl md:h-[480px]"
+              className="relative h-87.5px w-full rounded-[35px] object-cover shadow-2xl md:h-120px"
             />
 
             <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-5 shadow-xl">
@@ -328,7 +328,7 @@ export default function Home() {
           <img
             src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=900"
             alt="Quality rice grains"
-            className="h-[350px] w-full rounded-3xl object-cover"
+            className="h-87.5px w-full rounded-3xl object-cover"
           />
 
           <div>
