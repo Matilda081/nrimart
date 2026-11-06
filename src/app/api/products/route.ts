@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
 
 export async function GET() {
@@ -22,17 +21,6 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    // Check the logged-in user
-    const session = await auth();
-
-    // Only administrators can add products
-    if (!session?.user || session.user.role !== "ADMIN") {
-      return Response.json(
-        { message: "Unauthorized access" },
-        { status: 403 }
-      );
-    }
-
     const body = await request.json();
 
     const {

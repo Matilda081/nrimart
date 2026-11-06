@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
 
 type Context = {
@@ -11,15 +10,6 @@ export async function PUT(
   { params }: Context
 ) {
   try {
-    const session = await auth();
-
-    if (!session?.user || session.user.role !== "ADMIN") {
-      return Response.json(
-        { message: "Unauthorized access" },
-        { status: 403 }
-      );
-    }
-
     const { id } = await params;
 
     if (!/^[a-f\d]{24}$/i.test(id)) {
@@ -85,15 +75,6 @@ export async function DELETE(
   { params }: Context
 ) {
   try {
-    const session = await auth();
-
-    if (!session?.user || session.user.role !== "ADMIN") {
-      return Response.json(
-        { message: "Unauthorized access" },
-        { status: 403 }
-      );
-    }
-
     const { id } = await params;
 
     if (!/^[a-f\d]{24}$/i.test(id)) {
